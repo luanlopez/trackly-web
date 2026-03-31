@@ -39,7 +39,6 @@ export function HealthProvider({ children }: { children: React.ReactNode }) {
           <span className="h-2 w-2 animate-bounce rounded-full bg-foreground/60" />
         </div>
 
-        <p className="text-sm text-muted-foreground">Conectando ao servidor...</p>
       </div>
     </div>
   )
