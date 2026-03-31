@@ -1,0 +1,44 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "empty": "No jobs found",
+    "emptyHint": "Use the Chrome extension to save jobs from LinkedIn.",
+    "jobsSingle": "saved job",
+    "jobsPlural": "saved jobs"
+  },
+  "jobs": {
+    "colTitle": "Title",
+    "colCompany": "Company",
+    "colLocation": "Location",
+    "colStatus": "Application",
+    "colDate": "Date",
+    "colDetails": "Details",
+    "statusOpen": "Open",
+    "statusClosed": "Closed",
+    "statusArchived": "Archived",
+    "appNotApplied": "Not applied",
+    "appApplied": "Applied",
+    "appInterviewing": "Interviewing",
+    "appOffered": "Offer received",
+    "appRejected": "Rejected",
+    "appAccepted": "Accepted"
+  },
+  "drawer": {
+    "viewOriginal": "View original job",
+    "appStatusLabel": "Application status",
+    "appStatusHint": "Update as you progress",
+    "description": "Description",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving..."
+  },
+  "header": {
+    "logout": "Logout"
+  },
+  "toast": {
+    "logoutSuccess": "See you later!",
+    "updateSuccess": "Application updated",
+    "updateError": "Failed to save",
+    "tryAgain": "Please try again."
+  }
+}

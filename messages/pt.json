@@ -1,0 +1,44 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "empty": "Nenhuma vaga encontrada",
+    "emptyHint": "Use a extensão do Chrome para salvar vagas do LinkedIn.",
+    "jobsSingle": "vaga salva",
+    "jobsPlural": "vagas salvas"
+  },
+  "jobs": {
+    "colTitle": "Título",
+    "colCompany": "Empresa",
+    "colLocation": "Localização",
+    "colStatus": "Candidatura",
+    "colDate": "Data",
+    "colDetails": "Detalhes",
+    "statusOpen": "Aberta",
+    "statusClosed": "Encerrada",
+    "statusArchived": "Arquivada",
+    "appNotApplied": "Não candidatado",
+    "appApplied": "Candidatado",
+    "appInterviewing": "Em entrevista",
+    "appOffered": "Oferta recebida",
+    "appRejected": "Rejeitado",
+    "appAccepted": "Aceito"
+  },
+  "drawer": {
+    "viewOriginal": "Ver vaga original",
+    "appStatusLabel": "Status da candidatura",
+    "appStatusHint": "Atualize conforme avança no processo",
+    "description": "Descrição",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "saving": "Salvando..."
+  },
+  "header": {
+    "logout": "Sair"
+  },
+  "toast": {
+    "logoutSuccess": "Até logo!",
+    "updateSuccess": "Candidatura atualizada",
+    "updateError": "Erro ao salvar",
+    "tryAgain": "Tente novamente."
+  }
+}
