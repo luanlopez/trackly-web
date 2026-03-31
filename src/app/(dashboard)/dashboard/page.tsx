@@ -42,7 +42,7 @@ export default async function DashboardPage() {
     : t('dashboard.empty')
 
   return (
-    <div className="px-8 py-8 max-w-5xl">
+    <div className="px-8 py-8 max-w-5xl mx-auto w-full">
       <div className="mb-6">
         <h1 className="text-xl font-semibold text-foreground">{t('dashboard.title')}</h1>
         <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>
