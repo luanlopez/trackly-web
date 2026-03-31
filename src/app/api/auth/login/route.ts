@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     return Response.json({ user: FAKE_USER }, { status: 200 })
   }
 
-  const apiRes = await fetch(`${API_URL}/auth/login`, {
+  const apiRes = await fetch(`${API_URL}/api/v1/auth/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

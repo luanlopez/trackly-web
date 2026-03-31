@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers'
 
-const API_URL = process.env.API_URL ?? 'http://localhost:3000'
+const API_URL = `${process.env.API_URL ?? 'http://localhost:3000'}/api/v1`
 
 async function getAuthHeaders(): Promise<HeadersInit> {
   const cookieStore = await cookies()

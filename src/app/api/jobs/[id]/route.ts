@@ -13,7 +13,7 @@ export async function PATCH(
 
   const body = await request.json()
 
-  const res = await fetch(`${API_URL}/jobs/${id}`, {
+  const res = await fetch(`${API_URL}/api/v1/jobs/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',

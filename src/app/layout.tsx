@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/sonner'
 import { AuthProvider } from '@/contexts/AuthContext'
 import { LocaleProvider } from '@/contexts/LocaleContext'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
+import { HealthProvider } from '@/components/providers/HealthProvider'
 import type { User } from '@/types'
 import ptMessages from '../../messages/pt.json'
 import enMessages from '../../messages/en.json'
@@ -46,12 +47,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang={locale} className={`${jakartaSans.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <AuthProvider initialUser={initialUser}>
-            <LocaleProvider initialLocale={locale} messages={messages}>
-              <TooltipProvider>{children}</TooltipProvider>
-              <Toaster position="top-right" richColors />
-            </LocaleProvider>
-          </AuthProvider>
+          <HealthProvider>
+            <AuthProvider initialUser={initialUser}>
+              <LocaleProvider initialLocale={locale} messages={messages}>
+                <TooltipProvider>{children}</TooltipProvider>
+                <Toaster position="top-right" richColors />
+              </LocaleProvider>
+            </AuthProvider>
+          </HealthProvider>
         </ThemeProvider>
       </body>
     </html>
