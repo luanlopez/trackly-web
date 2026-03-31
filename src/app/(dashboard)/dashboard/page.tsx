@@ -42,20 +42,18 @@ export default async function DashboardPage() {
     : t('dashboard.empty')
 
   return (
-    <div className="p-8 space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-foreground">{t('dashboard.title')}</h1>
-        <p className="text-muted-foreground mt-1">{subtitle}</p>
+    <div className="px-8 py-8 max-w-5xl">
+      <div className="mb-6">
+        <h1 className="text-xl font-semibold text-foreground">{t('dashboard.title')}</h1>
+        <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>
       </div>
 
       {jobs.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-24 text-center gap-4">
-          <Briefcase className="w-12 h-12 text-muted-foreground/40" />
+        <div className="border border-border rounded-lg flex flex-col items-center justify-center py-20 text-center gap-3">
+          <Briefcase className="w-8 h-8 text-muted-foreground/30" />
           <div>
-            <p className="text-muted-foreground font-medium">{t('dashboard.empty')}</p>
-            <p className="text-muted-foreground/60 text-sm mt-1">
-              {t('dashboard.emptyHint')}
-            </p>
+            <p className="text-sm font-medium text-muted-foreground">{t('dashboard.empty')}</p>
+            <p className="text-xs text-muted-foreground/60 mt-1">{t('dashboard.emptyHint')}</p>
           </div>
         </div>
       ) : (

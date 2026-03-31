@@ -131,22 +131,22 @@ export function JobsTable({ initialJobs }: JobsTableProps) {
 
   return (
     <>
-      <div className="rounded-md border">
+      <div className="rounded-lg border border-border overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow>
-              <TableHead>{t('jobs.colTitle')}</TableHead>
-              <TableHead>{t('jobs.colCompany')}</TableHead>
-              <TableHead className="hidden md:table-cell">{t('jobs.colLocation')}</TableHead>
-              <TableHead>{t('jobs.colStatus')}</TableHead>
-              <TableHead className="hidden sm:table-cell">{t('jobs.colDate')}</TableHead>
-              <TableHead className="text-right">{t('jobs.colDetails')}</TableHead>
+            <TableRow className="bg-muted/40 hover:bg-muted/40">
+              <TableHead className="text-xs font-medium text-muted-foreground h-9 px-4">{t('jobs.colTitle')}</TableHead>
+              <TableHead className="text-xs font-medium text-muted-foreground h-9 px-4">{t('jobs.colCompany')}</TableHead>
+              <TableHead className="hidden md:table-cell text-xs font-medium text-muted-foreground h-9 px-4">{t('jobs.colLocation')}</TableHead>
+              <TableHead className="text-xs font-medium text-muted-foreground h-9 px-4">{t('jobs.colStatus')}</TableHead>
+              <TableHead className="hidden sm:table-cell text-xs font-medium text-muted-foreground h-9 px-4">{t('jobs.colDate')}</TableHead>
+              <TableHead className="text-right text-xs font-medium text-muted-foreground h-9 px-4" />
             </TableRow>
           </TableHeader>
           <TableBody>
             {jobs.map((job) => (
-              <TableRow key={job.id}>
-                <TableCell className="font-medium max-w-[200px]">
+              <TableRow key={job.id} className="hover:bg-muted/30 cursor-pointer" onClick={() => openDrawer(job)}>
+                <TableCell className="text-sm font-medium max-w-[200px] px-4 py-2.5">
                   <div className="flex items-center gap-2">
                     <span className="truncate">{job.title}</span>
                     {job.url && (
@@ -154,27 +154,28 @@ export function JobsTable({ initialJobs }: JobsTableProps) {
                         href={job.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="shrink-0 text-muted-foreground hover:text-primary"
+                        onClick={(e) => e.stopPropagation()}
+                        className="shrink-0 text-muted-foreground hover:text-foreground"
                       >
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     )}
                   </div>
                 </TableCell>
-                <TableCell className="max-w-[140px] truncate">{job.company}</TableCell>
-                <TableCell className="hidden md:table-cell max-w-[140px] truncate text-muted-foreground">
+                <TableCell className="text-sm max-w-[140px] truncate text-muted-foreground px-4 py-2.5">{job.company}</TableCell>
+                <TableCell className="hidden md:table-cell text-sm max-w-[140px] truncate text-muted-foreground px-4 py-2.5">
                   {job.location ?? '—'}
                 </TableCell>
-                <TableCell>
-                  <Badge variant={APP_STATUS_VARIANT[job.applicationStatus] ?? 'outline'} className="text-xs">
+                <TableCell className="px-4 py-2.5">
+                  <Badge variant={APP_STATUS_VARIANT[job.applicationStatus] ?? 'outline'} className="text-xs font-normal">
                     {APP_STATUS_LABELS[job.applicationStatus] ?? job.applicationStatus}
                   </Badge>
                 </TableCell>
-                <TableCell className="hidden sm:table-cell text-muted-foreground text-sm">
+                <TableCell className="hidden sm:table-cell text-xs text-muted-foreground px-4 py-2.5">
                   {new Date(job.createdAt).toLocaleDateString('pt-BR')}
                 </TableCell>
-                <TableCell className="text-right">
-                  <Button variant="outline" size="sm" onClick={() => openDrawer(job)}>
+                <TableCell className="text-right px-4 py-2.5">
+                  <Button variant="ghost" size="sm" className="h-7 text-xs text-muted-foreground hover:text-foreground" onClick={(e) => { e.stopPropagation(); openDrawer(job) }}>
                     {t('jobs.colDetails')}
                   </Button>
                 </TableCell>
