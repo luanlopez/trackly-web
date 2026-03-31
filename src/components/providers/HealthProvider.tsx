@@ -4,8 +4,6 @@ import { useEffect, useState } from 'react'
 
 export function HealthProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false)
-  const [attempt, setAttempt] = useState(0)
-
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>
 
@@ -17,9 +15,8 @@ export function HealthProvider({ children }: { children: React.ReactNode }) {
           return
         }
       } catch {
-        // API still sleeping
+        // API not ready yet
       }
-      setAttempt((n) => n + 1)
       timeout = setTimeout(check, 5000)
     }
 
@@ -42,11 +39,7 @@ export function HealthProvider({ children }: { children: React.ReactNode }) {
           <span className="h-2 w-2 animate-bounce rounded-full bg-foreground/60" />
         </div>
 
-        <p className="text-sm text-muted-foreground">
-          {attempt === 0
-            ? 'Conectando ao servidor...'
-            : 'O servidor está acordando, aguarde um momento...'}
-        </p>
+        <p className="text-sm text-muted-foreground">Conectando ao servidor...</p>
       </div>
     </div>
   )
